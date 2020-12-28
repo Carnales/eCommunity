@@ -1,0 +1,27 @@
+
+.header{
+  background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+}
+
+.header::after{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card{
+    box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card{
+    border: 0px !important;
+}
+
+.card .top:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}

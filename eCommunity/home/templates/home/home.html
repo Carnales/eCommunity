@@ -1,1 +1,24 @@
-<h1>Home</h1>
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+
+<!--<h1>About Us</h1>-->
+<img src="{{vendor.imageURL}}">
+<div class="container">
+	<div class="row">
+		{% for vendor in vendors %}
+		<div class="col">
+			<div class="weather-card one">
+				<div class="top" style="background: url(static{{vendor.imageURL}}); background-size:450px 370px">
+					<div class="wrapper">
+						<a href="{{vendor.url}}"><h1 class="heading">{{vendor.store_name}}</h1></a>
+						<a href="{{vendor.url}}"><h3 class="location">{{vendor.location}}</h3></a>
+					</div>
+				</div>
+			</div>
+        </div>
+        {% endfor %}
+	</div>
+</div>
+
+{% endblock content %}

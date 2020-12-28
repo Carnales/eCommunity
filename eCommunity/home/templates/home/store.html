@@ -1,1 +1,25 @@
-<h1>Store</h1>
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="header text-center">
+        <div class="wrapper">
+            <h1 class="display-3">Joe's and Sons Crackhouse</h1>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Sunset</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
