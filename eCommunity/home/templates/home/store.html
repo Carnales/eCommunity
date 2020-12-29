@@ -2,24 +2,29 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="header text-center">
-        <div class="wrapper">
-            <h1 class="display-3">Joe's and Sons Crackhouse</h1>
-            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+<div class="header">
+    <div style="background: url(static{{vendor.bannerURL}})" class="jumbotron">
+        <div class="wrapper-sd py-5 text-center">
+            <h1 class="display-4"><strong>{{vendor.store_name}}</strong></h1>
+            <p>{{vendor.description}}</p>
         </div>
     </div>
+</div>
   
+<div class="container py-5">
     <div class="row">
-        <div class="col-lg-4 mb-4">
+        {% for product in products %}
+        <div class="col-lg-4">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+                <div style="background: url(static{{product.imageURL}})" class="card-img-top"></div>
                 <div class="card-body">
-                    <h5 class="card-title">Sunset</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <button data-product={{product.id}} data-action="add" class="change-cart add-btn btn btn-outline-success">Add to Cart</button>
                 </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

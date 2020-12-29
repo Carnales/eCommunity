@@ -3,12 +3,19 @@
 {% block content %}
 
 <!--<h1>About Us</h1>-->
+<div style="background: url(https://i.postimg.cc/3N7wnb75/background.jpg)" class="jumbotron">
+    <div class="py-5 text-center">
+        <h1 class="display-4 font-weight-bold">About Us.</h1>
+        <p>We believe in the Future.</p>
+    </div>
+</div>
+
 <img src="{{vendor.imageURL}}">
 <div class="container">
 	<div class="row">
 		{% for vendor in vendors %}
 		<div class="col">
-			<div class="weather-card one">
+			<div class="weather-card">
 				<div class="top" style="background: url(static{{vendor.imageURL}}); background-size:450px 370px">
 					<div class="wrapper">
 						<a href="{{vendor.url}}"><h1 class="heading">{{vendor.store_name}}</h1></a>

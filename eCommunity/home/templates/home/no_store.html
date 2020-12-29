@@ -1,0 +1,16 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-white">
+    <h1 class="text-align: center"><strong>No vendor called {{message}}...</strong></h1>
+    <h2 class="text-align: center">But don't be sad, use this as an opportunity to make {{message}} yourself!</h2>
+</div>
+
+{% endblock content %}

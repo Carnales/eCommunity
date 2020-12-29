@@ -15,7 +15,8 @@ class Shop(models.Model):
     location = models.CharField(max_length=200, null=True)
     url = models.CharField(max_length=200, null=True)
     image = models.ImageField(null=True, blank=True)
-
+    banner = models.ImageField(null=True, blank=True)
+    description = models.TextField(default="Add description here", max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.store_name
@@ -28,11 +29,21 @@ class Shop(models.Model):
             img = ''
         return img
 
+    @property
+    def bannerURL(self):
+        try:
+            img = self.banner.url
+        except Exception as e:
+            img = ''
+        return img
+
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
     image = models.ImageField(null=True, blank=True)
     shop = models.ForeignKey(Shop, on_delete=models.SET_NULL, blank=True, null=True)
+    description = models.TextField(default="Add description here", max_length=200, blank=True, null=True)
+    stock = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
         return self.name
