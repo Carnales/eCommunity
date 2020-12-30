@@ -26,7 +26,6 @@ def url(request, url):
 
 def home(request):
     vendors = [vendor for vendor in Shop.objects.all()]
-    print(vendors[0].store_name)
 
     context = {"vendors":vendors}
     return render(request, 'home/home.html', context)
@@ -70,8 +69,6 @@ def updateItem(request):
     data = json.loads(request.body)
     productId = data['product']
     action = data['action']
-    print('action:', action)
-    print('productId:', productId)
 
     customer = request.user.customer
     product = Product.objects.get(id=productId)
