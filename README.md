@@ -21,7 +21,7 @@ Note: If you get windows socket errors, run 'python manage.py runserver 8080' in
 
 ## Fun Facts
 * We wrote it with full backend support through python and django, and front end with html/css/js
-* You can the quantity of items in the cart as well!
+* You can change the quantity of items in the cart as well!
 
 ## Guide
 
