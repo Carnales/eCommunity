@@ -2,6 +2,8 @@
 {% load static %}
 <html>
     <head>
+        <link rel="icon" href="{% static "images/favicon.ico" %}">
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>eCommunity</title>
@@ -9,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
-            
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/store.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
@@ -25,7 +27,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+
         <!--Less-->
         {% comment %} <link rel="stylesheet/less" type="text/css" href="styles.less" />
         <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script> {% endcomment %}
@@ -69,14 +71,14 @@
                 </ul>
                 <h1 class="nav-link navbar-brand" style="flex: auto; padding-right: 75px">eCommunity</h1>
                 <h1 class="navbar-brand" id="user">user</h1>
-                <script>checkUser()</script>         
+                <script>checkUser()</script>
                 <a class="navbar-brand" href="{% url 'cart' %}">
                     <img id="cart-icon" src="{% static 'images/sleigh.png' %}">
                 </a>
             </div>
         </nav>
         <!--EndNav-->
-        
+
         <!-- Snow animation -->
         <div class="snow">
             <img src="{% static 'images/snow.png' %}">
@@ -100,14 +102,14 @@
             <img src="{% static 'images/snow.png' %}">
             <img src="{% static 'images/snow.png' %}">
         </div>
-        
+
         <div class="container">
             <br>
             {% block content %}
-            
-            
+
+
             {% endblock content %}
-            
+
         </div>
 
         <!--SnowPile-->
@@ -117,11 +119,11 @@
             </nav>
         </footer>
 
-        
+
 
 		<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
-        
-    
+
+
     </body>
-    
+
 </html>
