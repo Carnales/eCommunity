@@ -13,3 +13,5 @@ The next generation of local eCommerce for the next generation of Communities. T
 "cart.html" - https://github.com/divanov11/django_ecommerce_mod5/blob/master/store/templates/store/cart.html
 
 Bootstrap Documentation
+
+# Stores Obtained from:
