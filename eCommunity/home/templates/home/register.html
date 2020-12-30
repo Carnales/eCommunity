@@ -1,0 +1,45 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="box-element" style="border-radius: 0px">
+                <h1> User Registration </h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Sign Up</button>
+                    <p>If you already have an account <a href="/login" target="blank"><strong>login</strong></a> instead. </p>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box-element" style="border-radius: 0px">
+                <h1> Delivery Employee Registration </h1>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control col-auto" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <br>    
+                </form>
+                <a style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" href="{% url 'employee' %}">Join the team</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from .models import *
 from django.http import JsonResponse
 import json
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout, authenticate, login
+from django.shortcuts import render, redirect
 
 def url(request, url):
     urls = [vendor.url for vendor in Shop.objects.all()]
@@ -24,6 +27,7 @@ def url(request, url):
 def home(request):
     vendors = [vendor for vendor in Shop.objects.all()]
     print(vendors[0].store_name)
+
     context = {"vendors":vendors}
     return render(request, 'home/home.html', context)
 
@@ -36,8 +40,26 @@ def cart(request):
     else:
         items = []
         order = {'get_cart_total':0, 'get_cart_items':0}
-        cartItems = order.get_cart_items
+        cartItems = 0
     context = {'items':items, 'order':order, 'cartItems':cartItems}
+
+    if not request.user.is_authenticated:
+        if request.method == "POST":
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                user = form.save()
+                username = form.cleaned_data.get('username')
+
+                Customer.objects.create(user=user, name=username)
+
+                login(request, user)
+                return render(request, "home/registered.html")
+            else:
+                for msg in form.error_messages:
+                    print(form.error_messages[msg])
+            return render(request, "home/register.html", {"form":form})
+        form = UserCreationForm
+        return render(request, "home/register.html", {"form":form})
     return render(request, 'home/cart.html', context)
 
 def checkout(request):
@@ -67,3 +89,34 @@ def updateItem(request):
     if orderItem.quantity <= 0:
         orderItem.delete()
     return JsonResponse('Item was added', safe=False)
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+
+            Customer.objects.create(user=user, name=username)
+
+            login(request, user)
+            return render(request, "home/registered.html")
+
+        else:
+            for msg in form.error_messages:
+                print(form.error_messages[msg])
+
+            return render(request, "home/register.html", {"form":form})
+
+    form = UserCreationForm
+    return render(request, "home/register.html", {"form":form})
+
+def log_out(request):
+    logout(request)
+    return render(request, "home/logged_out.html")
+
+def employee(request):
+    return render(request, "home/employee.html")
+
+def nchack(request):
+    return HttpResponse("I luuuuv nowth cawolayna")

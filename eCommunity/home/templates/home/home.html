@@ -2,13 +2,19 @@
 {% load static %}
 {% block content %}
 
+
 <!--<h1>About Us</h1>-->
-<div style="background: url(https://i.postimg.cc/3N7wnb75/background.jpg)" class="jumbotron">
-    <div class="py-5 text-center">
-        <h1 class="display-4 font-weight-bold">About Us.</h1>
-        <p>We believe in the Future.</p>
+<div class="header">
+    <div style="background: url({% static '/images/banner.jpg' %})" class="jumbotron">
+        <div class="wrapper-sd py-5 text-center">
+            <h1 class="display-4"><strong>About Us.</strong></h1>
+            <p>We believe in the future</p>
+        </div>
     </div>
 </div>
+
+<h1 class="display-4 text-white">Local vendors near you</h1>
+<hr style="border-color: white">
 
 <img src="{{vendor.imageURL}}">
 <div class="container">

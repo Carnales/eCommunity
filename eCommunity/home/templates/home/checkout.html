@@ -2,4 +2,18 @@
 {% load static %}
 {% block content %}
 
+<div class="header">
+    <div style="background: url({% static '/images/banner.jpg' %})" class="jumbotron">
+        <div class="wrapper-sd py-5 text-center">
+            <h1 class="display-4"><strong>Your Order is Being Processed</strong></h1>
+            <p>Thank you.</p>
+        </div>
+    </div>
+</div>
+
+<img src="{% static '/images/klm.gif' %}" style="
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
 {% endblock content %}

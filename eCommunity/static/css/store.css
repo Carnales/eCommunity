@@ -20,7 +20,7 @@
     overflow: hidden;
     border-width: 0px !important;
     border-radius: 0% !important;
-
+    z-index: 2;
 }
 
 .card-img-top {

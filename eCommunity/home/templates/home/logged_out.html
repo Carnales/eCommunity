@@ -1,0 +1,23 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-white">
+    <h1 style="text-align: center"><strong>Your account has been deleted!</strong></h1>
+    <h3 style="text-align: center">You can not use this site without an account, so you have to register again!</h2>
+
+    <br>
+    <a class="btn btn-success btn-lg" href="{% url 'register' %}" style="
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;">Register again!</a>
+</div>
+
+{% endblock content %}

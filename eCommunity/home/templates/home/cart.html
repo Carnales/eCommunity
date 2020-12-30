@@ -27,7 +27,7 @@
             </div>
             {% for item in items %}
             <div class="cart-row">
-                <div style="flex:2"><img class="row-image" src="/static{{item.product.imageURL}}"></div>
+                <div style="flex:2"><img class="row-image" style="height: 100px; width: 140px" src="/static{{item.product.imageURL}}"></div>
                 <div style="flex:2"><p>{{item.product.name}}</p></div>
                 <div style="flex:1"><p>${{item.product.price|floatformat:2}}</p></div>
                 <div style="flex:1">

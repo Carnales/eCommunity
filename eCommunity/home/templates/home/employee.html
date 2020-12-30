@@ -1,0 +1,23 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-white">
+    <h1 style="text-align: center"><strong>Congratulations, your form has been sent!</strong></h1>
+    <h3 style="text-align: center">Your Forms are being reviewed by an eCommunity employer!</h2>
+
+    <br>
+    <a class="btn btn-success btn-lg" href="{% url 'home' %}" style="
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;">Home</a>
+</div>
+
+{% endblock content %}
